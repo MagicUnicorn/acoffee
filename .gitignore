@@ -1,9 +1,10 @@
 __pycache__/
 db.sqlite3
-migrations/
 *.pyc
 acofeeenv/
 .idea/
-
+files/
+media/
+static/
 
 
