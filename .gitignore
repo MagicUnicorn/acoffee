@@ -6,5 +6,5 @@ acofeeenv/
 files/
 media/
 static/
-
+settings_local.py
 
