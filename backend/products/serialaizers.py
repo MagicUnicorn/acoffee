@@ -5,10 +5,10 @@ from .models import Product, Category
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = '__all__'
+        exclude = ('is_deleted', )
 
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = '__all__'
+        exclude = ('is_deleted', )
