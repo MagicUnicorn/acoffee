@@ -20,6 +20,7 @@ class Product(models.Model):
 	# Модель для категорий
 	name = models.CharField(max_length=128)
 	category = models.ForeignKey('Category', related_name='products', on_delete='Cascade')
+	price = models.FloatField(default=0.0)
 	image = models.ImageField()
 	timestamp_create = models.DateTimeField(default=timezone.now)
 	timestamp_update = models.DateTimeField(default=timezone.now)
