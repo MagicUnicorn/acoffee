@@ -7,11 +7,12 @@ from .serialaizers import ProductSerializer, CategorySerializer
 
 
 # ViewSets define the view behavior.
-class ProductViewSet(viewsets.ModelViewSet):
+class ProductViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Product.objects.filter(is_deleted=False)
     serializer_class = ProductSerializer
 
 
-class CategoryViewSet(viewsets.ModelViewSet):
+class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Category.objects.filter(is_deleted=False)
     serializer_class = CategorySerializer
+
