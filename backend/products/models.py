@@ -25,6 +25,7 @@ class Product(models.Model):
 	timestamp_update = models.DateTimeField(default=timezone.now)
 	description = models.CharField(max_length=512)
 	is_deleted = models.BooleanField(default=False)
+	is_vegan = models.BooleanField(default=False)
 
 	def __str__(self):
 		return self.name
