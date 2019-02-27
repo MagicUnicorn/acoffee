@@ -18,11 +18,23 @@ from django.conf.urls import url, include
 
 from rest_framework import routers
 from products.views import ProductViewSet, CategoryViewSet
+from about.views import AboutViewSet
+from contact.views import ContactViewSet
+from news.views import NewsViewSet
+from orders.views import OrderViewSet
+from review.views import ReviewViewSet
 
 
 router = routers.DefaultRouter()
 router.register(r'products', ProductViewSet)
 router.register(r'category', CategoryViewSet)
+router.register(r'about', AboutViewSet)
+router.register(r'contact', ContactViewSet)
+router.register(r'news', NewsViewSet)
+router.register(r'order', OrderViewSet)
+router.register(r'review', ReviewViewSet)
+
+
 
 
 # Wire up our API using automatic URL routing.
