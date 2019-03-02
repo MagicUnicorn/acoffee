@@ -9,4 +9,5 @@ static/
 settings_local.py
 backend/backend/settings_local.by
 backend/backend/safety.by
+safety.by
 
