@@ -7,5 +7,4 @@ files/
 media/
 static/
 settings_local.py
-safety.by
-
+safety.py
