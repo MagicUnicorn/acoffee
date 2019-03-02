@@ -42,7 +42,8 @@ INSTALLED_APPS = [
 	'products',
 	'review',
 	'contact',
-	'rest_framework'
+	'rest_framework',
+	'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -77,9 +78,14 @@ TEMPLATES = [
 REST_FRAMEWORK = {
 	# Use Django's standard `django.contrib.auth` permissions,
 	# or allow read-only access for unauthenticated users.
+
 	'DEFAULT_PERMISSION_CLASSES': [
 		'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-	]
+	],
+	'DEFAULT_AUTHENTICATION_CLASSES': (
+		'rest_framework.authentication.BasicAuthentication',
+		'rest_framework.authentication.SessionAuthentication',
+	)
 }
 
 WSGI_APPLICATION = 'backend.wsgi.application'
@@ -130,11 +136,11 @@ USE_TZ = True
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-MEDIA_URL = '/media/'
+MEDIA_URL = ':8000/media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATIC_URL = '/static/'
+STATIC_URL = ':8000/static/'
 
 #STATICFILES_DIRS = (
 #	os.path.join(BASE_DIR, 'static'),
