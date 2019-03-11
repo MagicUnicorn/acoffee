@@ -21,7 +21,7 @@ from products.views import ProductViewSet, CategoryViewSet
 from about.views import AboutViewSet
 from contact.views import ContactViewSet
 from news.views import NewsViewSet
-from orders.views import OrderViewSet
+from orders.views import OrderProductViewSet
 from review.views import ReviewViewSet
 
 
@@ -31,7 +31,7 @@ router.register(r'category', CategoryViewSet)
 router.register(r'about', AboutViewSet)
 router.register(r'contact', ContactViewSet)
 router.register(r'news', NewsViewSet)
-router.register(r'order', OrderViewSet)
+router.register(r'order_product', OrderProductViewSet)
 router.register(r'review', ReviewViewSet)
 
 
