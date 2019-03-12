@@ -7,9 +7,8 @@
 
         <div class="col-md-7 col-sm-12 text-center ">
           <h1 class="mb-3 mt-5 bread">Меню</h1>
-          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Главная</a></span> <span>Меню</span></p>
+          <p class="breadcrumbs"><span class="mr-2"><a href="/">Главная</a></span> <span>Меню</span></p>
         </div>
-
       </div>
     </div>
   </div>
@@ -63,92 +62,18 @@
       <div class="col-md-6 mb-5 pb-3">
         <h3 class="mb-5 heading-pricing ">Кофе</h3>
         
-        <div class="pricing-entry d-flex ">
-          <div class="img" style="background-image: url(images/marc-babin-1148147-unsplash.jpg);"></div>
+        <div class="pricing-entry d-flex" *ngFor="let product of menus">
           <div class="desc pl-3">
             <div class="d-flex text align-items-center">
-              <h3><span>Эспрессо</span></h3>
-              <span class="price">3,5 BYN</span>
+              <h3><span>{{product.name}}</span></h3>
+              <span class="price">{{product.price}} BYN</span>
             </div>
             <div class="d-block">
-              <p>Правильный итальянский эспрессо с тонким ароматом</p>
+              <p>{{product.description}}</p>
             </div>
           </div>
         </div>
-        <div class="pricing-entry d-flex ">
-          <div class="img" style="background-image: url(images/patrick-fore-361431-unsplash.jpg);"></div>
-          <div class="desc pl-3">
-            <div class="d-flex text align-items-center">
-              <h3><span>Американо</span></h3>
-              <span class="price">3,5 BYN</span>
-            </div>
-            <div class="d-block">
-              <p>Эспрессо, дополнительно разбавленный водой</p>
-            </div>
-          </div>
-        </div>
-        <div class="pricing-entry d-flex ">
-          <div class="img" style="background-image: url(images/timothy-barlin-1278307-unsplash.jpg);"></div>
-          <div class="desc pl-3">
-            <div class="d-flex text align-items-center">
-              <h3><span>Капучино</span></h3>
-              <span class="price">4,5 BYN</span>
-            </div>
-            <div class="d-block">
-              <p>Эспрессо с горячим молоком и молочной пенкой</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="pricing-entry d-flex ">
-          <div class="img" style="background-image: url(images/zachary-cohen-1208799-unsplash.jpg);"></div>
-          <div class="desc pl-3">
-            <div class="d-flex text align-items-center">
-              <h3><span>Латте</span></h3>
-              <span class="price">5 BYN</span>
-            </div>
-            <div class="d-block">
-              <p>Напиток из взбитого горячего молока и кофе с преобладанием молока</p>
-            </div>
-          </div>
-        </div>
-        <div class="pricing-entry d-flex ">
-          <div class="img" style="background-image: url(images/matt-hoffman-310320-unsplash.jpg);"></div>
-          <div class="desc pl-3">
-            <div class="d-flex text align-items-center">
-              <h3><span>Мокка кофе</span></h3>
-              <span class="price">5 BYN</span>
-            </div>
-            <div class="d-block">
-              <p>Эспрессо с молоком, шоколадным топпингом и сливками</p>
-            </div>
-          </div>
-        </div>
-        <div class="pricing-entry d-flex ">
-          <div class="img" style="background-image: url(images/paul-hanaoka-280205-unsplash.jpg);"></div>
-          <div class="desc pl-3">
-            <div class="d-flex text align-items-center">
-              <h3><span>Айс Кофе</span></h3>
-              <span class="price">5 BYN</span>
-            </div>
-            <div class="d-block">
-              <p>Холодный напиток на основе эспрессо, молока и сиропа</p>
-            </div>
-          </div>
-        </div>
-        <div class="pricing-entry d-flex ">
-          <div class="img" style="background-image: url(images/lex-sirikiat-1248755-unsplash.jpg);"></div>
-          <div class="desc pl-3">
-            <div class="d-flex text align-items-center">
-              <h3><span>АКофе</span></h3>
-              <span class="price">7 BYN</span>
-            </div>
-            <div class="d-block">
-              <p>Фирменный кофейный коктель заведения с добавлением восточных специй</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      </div> 
 
       <div class="col-md-6 mb-5 pb-3">
         <h3 class="mb-5 heading-pricing ">Чай</h3>

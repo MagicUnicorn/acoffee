@@ -5,11 +5,16 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-menu',
     templateUrl: 'menu.html',
     // styleUrls: [ 'about.style.css' ]
+    providers: [RequestService]
 })
+
 export class MenuComponent implements OnInit {
+    menus = []
     constructor(
         private rs: RequestService,
-    ) {}
+    ) {
+
+    }
 
     ngOnInit() {
         this.getProducts();
@@ -18,9 +23,11 @@ export class MenuComponent implements OnInit {
     getProducts() {
         this.rs.getProducts().subscribe(
             response => {
-                console.log("//////////cd f ", response)
+                this.menus = response;
+                console.log(this.menus)
             }
-        )
+        );
+        
     }
 }
 
