@@ -17,12 +17,14 @@ from django.contrib import admin
 from django.conf.urls import url, include
 
 from rest_framework import routers
+from rest_framework.authtoken.views import obtain_auth_token
 from products.views import ProductViewSet, CategoryViewSet
 from about.views import AboutViewSet
 from contact.views import ContactViewSet
 from news.views import NewsViewSet
 from orders.views import OrderProductViewSet
 from review.views import ReviewViewSet
+from ext_user.views import CreateUserView
 
 
 router = routers.DefaultRouter()
@@ -33,7 +35,7 @@ router.register(r'contact', ContactViewSet)
 router.register(r'news', NewsViewSet)
 router.register(r'order_product', OrderProductViewSet)
 router.register(r'review', ReviewViewSet)
-
+router.register(r'create_user', CreateUserView)
 
 
 
@@ -43,8 +45,10 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url('admin/', admin.site.urls),
+    url('api-token-auth/', obtain_auth_token, name='api_token_auth'),
+    # url('create-user/', CreateUserView, name='create-user')
 ]
-
+urlpatterns += router.urls
 
 # urlpatterns = [
 #
