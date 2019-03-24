@@ -8,8 +8,6 @@ User = get_user_model()
 
 class Order(models.Model):
 	user = models.ForeignKey(User, related_name='order_user', on_delete='Cascade')
-	datetime_open = models.DateTimeField()
-	datetime_close = models.DateTimeField()
 
 	def __str__(self):
 		return self.id.__str__()

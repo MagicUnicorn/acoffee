@@ -6,7 +6,6 @@ from django.utils import timezone
 class Category(models.Model):
 	# Модель дял продуктов
 	name = models.CharField(max_length=128)
-	image = models.ImageField()
 	timestamp_create = models.DateTimeField(default=timezone.now)
 	timestamp_update = models.DateTimeField(default=timezone.now)
 	description = models.CharField(max_length=512)
