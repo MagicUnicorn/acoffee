@@ -16,19 +16,6 @@ class ProductViewSet(viewsets.ReadOnlyModelViewSet):
         serializer = ProductSerializer(queryset, many=True)
         return Response(serializer.data)
 
-    @list_route(methods=['get'])
-    def get_sale(self, request, pk=None):
-        self.queryset.filter(is_vegan=True)
-        queryset = self.queryset.filter(is_sale=True)
-        serializer = ProductSerializer(queryset, many=True)
-        return Response(serializer.data)
-
-    @list_route(methods=['get'])
-    def get_sale_vegan(self, request, pk=None):
-        queryset = self.queryset.filter(is_vegan=True, is_sale=True)
-        serializer = ProductSerializer(queryset, many=True)
-        return Response(serializer.data)
-
 
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Category.objects.filter(is_deleted=False)
