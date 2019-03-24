@@ -1,0 +1,26 @@
+<div class="card mt-5" style="margin:auto;width: 600px;" *ngIf="!loginDisplay">
+  <div class="card-body" style="color:#000">
+    <h5 class="card-title">Registration</h5>
+    <div class="form-group">
+      <label for="firstname">Имя</label>
+      <input style="color:#000" type="text" id="firstname" placeholder="Имя" [(ngModel)]="first_name">
+    </div>
+    <div class="form-group">
+      <label for="lastname">Фамилия</label>
+      <input style="color:#000" type="text" id="lastname" placeholder="Фамилия" [(ngModel)]="last_name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input style="color:#000" type="text" id="email" placeholder="Email" [(ngModel)]="email">
+    </div>
+    <div class="form-group">
+      <label for="username">Ник</label>
+      <input style="color:#000" type="text" id="username" placeholder="Ник" [(ngModel)]="username">
+    </div>
+    <div class="form-group">
+      <label for="password">Пароль</label>
+      <input style="color: #000;" type="password" id="password" placeholder="Пароль" [(ngModel)]="password">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="create_user(first_name, last_name, email, username, password)">Register</button>
+  </div>
+</div>

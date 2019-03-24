@@ -1,0 +1,68 @@
+<section class="ftco-section ftco-services">
+    <div class="container" *ngFor="let review of reviews">
+       
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6"><h2>{{review.title}}</h2></div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6"><h5>{{review.body}}</h5></div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">{{review.timestamp_create | date:'yyyy-MM-dd HH:mm:ss'}}  <b>{{review.user.username}}</b></div>
+                <div class="col-md-3"></div>
+            </div>
+        <div class="row" >
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div style='border-bottom:1px solid #ccc;margin-bottom:15px;'></div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+<div class="container">
+
+        <div class="row" >
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form class="form-horizontal">
+            <input type="hidden" name="_token" value="xr1HnbcNIKkDyhWxXpxgY0flpTwf7wX7cK1UxBEb">
+            <fieldset>
+                <div class="row">
+                    <div class="col-md-12" style="padding-bottom: 5px;">
+                        <div id="legend">
+                            <legend class="">Оставить отзыв</legend>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" style="padding-bottom: 15px;">
+                        <input type="text" id="username" name="username" placeholder="Имя" class="input-xlarge" style="width: 100%">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" style="padding-bottom: 15px;">
+                        <input type="text" id="email" name="email" placeholder="Email" class="input-xlarge" style="width: 100%">
+                    </div>    
+                </div>
+                <div class="row ">
+                    <div class="col-md-12" style="padding-bottom: 15px;">
+                        <textarea id="review" name="review" value="review" style="min-width: 100%" placeholder="Текст отзыва" ></textarea>
+                    </div>  
+                </div>  
+                <div class="row">
+                     <div class="form-group">
+            <input type="submit" value="Отправить" class="btn btn-dark py-3 px-5" style="margin-left: 15px;">
+          </div>
+                </div>    
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+</div>
+</section>

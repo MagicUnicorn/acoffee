@@ -1,0 +1,43 @@
+<section class="ftco-menu mb-5 pb-5">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-7 heading-section text-center ">
+        <span class="subheading">aCoffee</span>
+        <h2 class="mb-4">Мы готовы принять заказы</h2>
+        <p>Учитывая ускоряющийся ритм жизни современного человека предлагаем Вам воспользоваться возможностью сделать заказ онлайн. В этом случае Вы будете уверены, что любимый десерт dв течение дня будет в наличии при посещении нашей кофейни. Мы бесконечно любим своих гостей и заботимся о Вашем комфорте каждый день.</p>
+        <p><a href="menu.html" class="btn btn-primary p-3 px-xl-4 py-xl-3">Смотреть меню</a></p>
+      </div>
+    </div>
+    <div class="row d-md-flex">
+      <div class="col-lg-12 p-md-5">
+        <div class="row">
+          <div class="col-md-12 nav-link-wrap mb-5">
+            <div class="nav nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical" >
+              <a class="nav-link" id="{{key}}" [routerLink]="" data-toggle="pill" role="tab" aria-controls="v-pills-2" aria-selected="false" (click)="sortProduct(key)" *ngFor="let key of objectKeys(menus)">{{key}}</a>
+            </div>
+          </div>
+          <div class="col-md-12 d-flex align-items-center">
+            <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
+                <div class="row">
+                  <div class="col-md-4 text-center" *ngFor="let product of products">
+                    <div class="menu-wrap">
+                      <a [routerLink]="" class="menu-img img mb-4" style="background-image: url(https://fotooboi.biz/img/gallery/12/thumbs/thumb_l_22071.jpg);"></a>
+                      <div class="text">
+                        <h3><a [routerLink]="">{{product.name}}</a></h3>
+                        <p>{{product.description}}</p>
+                        <p class="price"><span>{{product.price}}</span></p>
+                        <p *ngIf="!product.ordered"><a [routerLink]="" id="{{product.id}}" class="btn btn-primary btn-outline-primary" (click)="addToOrder(product.id)">Заказать</a></p>
+                        <p *ngIf="product.ordered"><a [routerLink]="" id="{{product.id}}" class="btn btn-primary btn-outline-primary" (click)="deleteFromOrder(product.id)">Отменить</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

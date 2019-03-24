@@ -1,0 +1,35 @@
+<section class="ftco-section" style="padding-bottom: 0px;">
+    <div class="container">
+      <div class="row d-flex">
+        <div class="col-md-4 d-flex" *ngFor="let elem of news">
+            <div class="blog-entry align-self-stretch">
+            <p class="block-20" style="background-image: url('https://i.pinimg.com/originals/bc/6b/92/bc6b9273af43ae3c165c0fd9db0ef60f.jpg');">
+            </p>
+            <div class="text py-4 d-block">
+                <div class="meta">
+                <div>{{elem.timestamp_create | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+              </div>
+              <h3 class="heading mt-2">{{elem.title}}</h3>
+              <p>{{elem.body}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+  <!-- <div class="col-md-4 d-flex ftco-animate">
+    <div class="blog-entry align-self-stretch">
+      <p class="block-20" style="background-image: url('images/edan-cohen-2508-unsplash.jpg');">
+      </p>
+      <div class="text py-4 d-block">
+        <div class="meta">
+          <div>1 апреля 2019</div>
+        </div>
+        <h3 class="heading mt-2">17 апреля участвуй в акции в честь Дня кофе</h3>
+        <p>17 апреля - Международный день кофе, в честь этого праздника дарим Вам скидку на все кофейное меню в размере 30%.</p>
+      </div>
+    </div>
+  </div> -->

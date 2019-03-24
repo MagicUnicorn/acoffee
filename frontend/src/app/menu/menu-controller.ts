@@ -1,5 +1,8 @@
 import { RequestService } from '../app.service'
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { resolve, reject } from 'q';
+
 
 @Component({
     selector: 'app-menu',
@@ -9,7 +12,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class MenuComponent implements OnInit {
-    menus = []
+    data = []
+    menus = {}
     constructor(
         private rs: RequestService,
     ) {
@@ -17,17 +21,26 @@ export class MenuComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getProducts();
+        this.rs.getProducts().toPromise().then(response => {
+            this.sortProductInfo(response);
+        })
     };
 
-    getProducts() {
-        this.rs.getProducts().subscribe(
-            response => {
-                this.menus = response;
-                console.log(this.menus)
+    objectKeys(obj) {
+        return Object.keys(obj);
+    }
+
+
+    sortProductInfo(data) {
+        let m = {}
+        data.forEach(function(elem) {
+            if (!(elem["category"]["name"] in m)) {
+                m[elem["category"]["name"]] = [elem]
+            } else {
+                m[elem["category"]["name"]].push(elem)
             }
-        );
-        
+        })
+        this.menus = m
     }
 }
 
