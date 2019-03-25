@@ -10,7 +10,7 @@ export class RequestService {
         private http: Http,
 
     ) {
-        this.host = "http://localhost:8000";
+        this.host = "http://104.248.31.49:8000";
      }
 
     private get options() {
