@@ -12,6 +12,7 @@ import { AppComponent } from './app.component'
 const routes: Routes = [
   // {path: '', component: AppComponent, pathMatch: 'full'},
   {path: '', component: AboutComponent},
+  {path: 'about', component: AboutComponent},
   {path: 'menu', component: MenuComponent},
   {path: 'service', component: ServiceComponent},
   {path: 'blog', component: BlogComponent},
