@@ -1,8 +1,5 @@
 import { RequestService } from '../app.service'
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { resolve, reject } from 'q';
-
 
 @Component({
     selector: 'app-menu',

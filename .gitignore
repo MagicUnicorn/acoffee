@@ -1,4 +1,6 @@
 __pycache__/
+node_modules/
+e2e
 db.sqlite3
 *.pyc
 acofeeenv/

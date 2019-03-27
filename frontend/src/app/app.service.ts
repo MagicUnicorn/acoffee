@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-
+import { host } from './main';
 import { map} from 'rxjs/operators';
 
 @Injectable()
 export class RequestService {
-    private host: string;
     constructor(
         private http: Http,
 
     ) {
-        this.host = "http://104.248.31.49:8000";
      }
 
     private get options() {
@@ -22,15 +20,15 @@ export class RequestService {
     }
 
     getProducts() {
-        return this.http.get(this.host + '/products/', this.options).pipe(map((res: Response) => res.json()))
+        return this.http.get(host + '/products/', this.options).pipe(map((res: Response) => res.json()))
     }
 
     getReview() {
-        return this.http.get(this.host + '/review/', this.options).pipe(map((res: Response) => res.json()))
+        return this.http.get(host + '/review/', this.options).pipe(map((res: Response) => res.json()))
     }
 
     getNews() {
-        return this.http.get(this.host + '/news/', this.options).pipe(map((res: Response) => res.json()))
+        return this.http.get(host + '/news/', this.options).pipe(map((res: Response) => res.json()))
     }
 
 }
