@@ -42,7 +42,7 @@
                 <div class="row">
                   <div class="col-md-4 text-center" *ngFor="let product of products">
                     <div class="menu-wrap">
-                      <a [routerLink]="" class="menu-img img mb-4" style="background-image: url(https://fotooboi.biz/img/gallery/12/thumbs/thumb_l_22071.jpg);"></a>
+                      <a [routerLink]="" class="menu-img img mb-4" style="background-image: url({{product.image}});"></a>
                       <div class="text">
                         <h3><a [routerLink]="">{{product.name}}</a></h3>
                         <p>{{product.description}}</p>
