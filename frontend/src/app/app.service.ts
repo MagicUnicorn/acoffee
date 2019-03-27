@@ -31,4 +31,8 @@ export class RequestService {
         return this.http.get(host + '/news/', this.options).pipe(map((res: Response) => res.json()))
     }
 
+    getContact() {
+        return this.http.get(host + '/contact/', this.options).pipe(map((res: Response) => res.json()))
+    }
+
 }

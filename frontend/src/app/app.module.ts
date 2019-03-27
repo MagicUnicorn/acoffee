@@ -16,6 +16,7 @@ import { OrderService } from './order/order-service';
 import { ShopComponent } from './shop/shop-controller';
 import { UserComponent } from './user/user-controller';
 import { AuthenticationService } from './auth.service';
+import { ContactComponent } from './contact/contact-controller'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AuthenticationService } from './auth.service';
     BlogComponent,
     OrderComponent,
     ShopComponent,
-    UserComponent
+    UserComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
