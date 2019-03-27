@@ -7,7 +7,7 @@ import { BlogComponent } from './blog/blog-controller';
 import { OrderComponent } from './order/order-controller';
 import { ShopComponent } from './shop/shop-controller';
 import { UserComponent } from './user/user-controller';
-import { AppComponent } from './app.component'
+import { ContactComponent } from './contact/contact-controller'
 
 const routes: Routes = [
   // {path: '', component: AppComponent, pathMatch: 'full'},
@@ -19,6 +19,7 @@ const routes: Routes = [
   {path: 'order', component: OrderComponent},
   {path: 'shop', component: ShopComponent},
   {path: 'user', component: UserComponent},
+  {path: 'contact', component: ContactComponent}
 ];
 
 @NgModule({
