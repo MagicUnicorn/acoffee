@@ -15,9 +15,6 @@
   </div>
 </section>
 
-
-
-
 <section class="ftco-menu mb-5 pb-5">
   <div class="container">
     <div class="row justify-content-center mb-5">
@@ -42,7 +39,7 @@
                 <div class="row">
                   <div class="col-md-4 text-center" *ngFor="let product of products">
                     <div class="menu-wrap">
-                      <a [routerLink]="" class="menu-img img mb-4" style="background-image: url({{product.image}});"></a>
+                      <a [routerLink]="" class="menu-img img mb-4" [ngStyle]="{ 'background-image': 'url(' + product.image + ')'}"></a>
                       <div class="text">
                         <h3><a [routerLink]="">{{product.name}}</a></h3>
                         <p>{{product.description}}</p>
