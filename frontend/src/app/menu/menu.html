@@ -62,7 +62,7 @@
       <div class="col-md-6 mb-5 pb-3" *ngFor="let key of objectKeys(menus)">
         <h3 class="mb-5 heading-pricing ">{{key}}</h3>
         <div class="pricing-entry d-flex" *ngFor="let product of menus[key]">
-         <div class="img" style="background-image: url({{product.image}});"></div>
+         <div class="img" style="background-image: url(product.image);"></div>
           <div class="desc pl-3">
             <div class="d-flex text align-items-center">
               <h3><span>{{product.name}}</span></h3>
