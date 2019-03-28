@@ -49,7 +49,7 @@
             <tbody>
               <tr class="text-center" *ngFor="let product of order">
                 <td class="product-remove"><a [routerLink]="" id="{{product.id}}" (click)="deleteProductOrder(product.id)"><span class="icon-close"></span></a></td>
-                <td class="image-prod"><div class="img" style="background-image:url(images/alexandra-kusper-217070-unsplash.jpg);"></div></td>
+                <td class="image-prod"><div class="img" [ngStyle]="{ 'background-image': 'url(' + product.image + ')'}"></div></td>
                 
                 <td class="product-name">
                   <h3>{{product.name}}</h3>
@@ -60,11 +60,11 @@
                 
                 <td class="quantity">
                   <div class="input-group mb-3">
-                     <input type="text" name="quantity" [(ngModel)]="quantity" class="quantity form-control input-number" value={{product.quantity}} min="1" max="100">
+                     <input type="text" name="quantity" id="product.id" (change)="changeQuantity($event)" [(ngModel)]="product.quantity" class="quantity form-control input-number" value={{product.quantity}} min="1" max="100">
                   </div>
                 </td>
                 
-                <td class="total">{{product.price * product.quantity}} BYN</td>
+                <td class="total">{{product.price * product.quantity | number:'1.0-2'}} BYN</td>
               </tr><!-- END TR-->
             </tbody>
           </table>

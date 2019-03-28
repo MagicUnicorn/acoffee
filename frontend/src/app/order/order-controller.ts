@@ -15,6 +15,7 @@ import { DataService } from './../global.service';
 export class OrderComponent implements OnInit {
     loginDisplay = false
     order = []
+    totalSum = 0
 
     constructor(
         private authServ: AuthenticationService,
@@ -47,7 +48,7 @@ export class OrderComponent implements OnInit {
     }
 
     changeQuantity(event) {
-        console.log(event, '909809809809')
+        console.log(event.target.value, '909809809809')
     }
 
     ngOnInit() {
