@@ -59,22 +59,22 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12" style="padding-bottom: 15px;">
-                        <input type="text" id="username" name="username" placeholder="Имя" class="input-xlarge" style="width: 100%">
+                        <input type="text" id="username" name="username" [(ngModel)]="username" placeholder="Имя" class="input-xlarge" style="width: 100%">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12" style="padding-bottom: 15px;">
-                        <input type="text" id="email" name="email" placeholder="Email" class="input-xlarge" style="width: 100%">
+                        <input type="text" id="title" name="title" [(ngModel)]="title" placeholder="title" class="input-xlarge" style="width: 100%">
                     </div>    
                 </div>
                 <div class="row ">
                     <div class="col-md-12" style="padding-bottom: 15px;">
-                        <textarea id="review" name="review" value="review" style="min-width: 100%" placeholder="Текст отзыва" ></textarea>
+                        <textarea id="review" name="review" [(ngModel)]="review" value="review" style="min-width: 100%" placeholder="Текст отзыва" ></textarea>
                     </div>  
                 </div>  
                 <div class="row">
                      <div class="form-group">
-            <input type="submit" value="Отправить" class="btn btn-dark py-3 px-5" style="margin-left: 15px;">
+            <input type="submit" value="Отправить" (click)="create_review(username, title, review)" class="btn btn-dark py-3 px-5" style="margin-left: 15px;">
           </div>
                 </div>    
             </fieldset>

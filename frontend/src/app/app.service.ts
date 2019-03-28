@@ -51,6 +51,17 @@ export class RequestService {
             })
     }
 
+    setReview(username, title, review): Observable<any> {
+        const token = JSON.parse(localStorage.getItem('token'))
+        let headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+
+        });
+        let data = {user:username, title:title,  body:review}
+        return this.http2.post(host + '/review/', data, {headers: headers})
+    }
+
     getOrder(username): Observable<any> {
         const token = JSON.parse(localStorage.getItem('token'))
         let headers = new HttpHeaders({

@@ -29,5 +29,12 @@ export class ServiceComponent implements OnInit {
         })
         this.reviews = data
     }
+
+    create_review(username, title, review) {
+        this.rs.setReview(username, title, review).subscribe(res=> {
+            this.reviews = res
+        })
+        window.location.reload();
+    }
 }
 

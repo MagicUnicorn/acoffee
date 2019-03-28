@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ServiceComponent } from './service-controller';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -9,6 +10,8 @@ import { ServiceComponent } from './service-controller';
   imports: [
     BrowserModule,
   ],
-  providers: [],
+  providers: [
+    CommonModule
+  ],
 })
 export class ServiceModule { }
