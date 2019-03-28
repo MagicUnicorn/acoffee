@@ -13,6 +13,43 @@
   </div>
 </section>
 
+
+    <div class="card mt-5" style="margin:auto;width: 600px;" *ngIf="!loginDisplay">
+          <div class="card-body" style="color:#000">
+                         <fieldset>
+                  <div class="row">
+                      <div class="col-md-12" style="padding-bottom: 5px;">
+                          <div id="legend">
+                              <legend class="">Вход</legend>
+                          </div>
+                      </div>
+                  </div>
+                   <div class="row">
+                      <div class="col-md-12" style="padding-bottom: 15px;">
+                          <input type="text" id="username" name="username" placeholder="Логин" [(ngModel)]="username" class="input-xlarge" style="width: 100%">
+                      </div>    
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12" style="padding-bottom: 15px;">
+                          <input type="password" id="password" name="password" placeholder="Пароль" [(ngModel)]="password" class="input-xlarge" style="width: 100%">
+                      </div>    
+                  </div>
+                  
+                  <div class="row">
+                       <div class="form-group">
+              <input type="submit" value="Войти" (click)="login(username, password)" class="btn btn-dark py-3 px-5" style="margin-left: 15px;">
+            </div>
+                  </div>    
+              </fieldset>
+</div>
+</div>
+
+
+
+
+
+
+<!-- 
 <div class="card mt-5" style="margin:auto;width: 600px;" *ngIf="!loginDisplay">
   <div class="card-body" style="color:#000">
     <h5 class="card-title">Login</h5>
@@ -26,9 +63,9 @@
     </div>
     <button type="submit" class="btn btn-primary" (click)="login(username, password)">Login</button>
   </div>
-</div>
+</div> -->
 
-<button type="submit" class="btn btn-primary" (click)="logout()">Logout</button>
+<!-- <button type="submit" class="btn btn-primary" (click)="logout()">Logout</button> -->
 
 <section class="ftco-section ftco-cart" *ngIf="loginDisplay" >
   <div class="container">
