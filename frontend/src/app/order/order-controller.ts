@@ -2,6 +2,7 @@ import { RequestService } from '../app.service';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from './../auth.service';
 import { DataService } from './../global.service';
+import { host } from './../main';
 
 @Component({
     selector: 'app-menu',
@@ -15,7 +16,9 @@ import { DataService } from './../global.service';
 export class OrderComponent implements OnInit {
     loginDisplay = false
     order = []
+    ordered = []
     totalSum = 0
+    totalSumOrdered = 0
 
     constructor(
         private rs: RequestService,
@@ -75,8 +78,24 @@ export class OrderComponent implements OnInit {
         for (var i = 0; i < this.order.length; i++) {
             order["product"].push({"id":this.order[i].id, "quantity": this.order[i].quantity})
         }
-        console.log(order)
         this.rs.setOrder(order)
+        this.getOrdered(JSON.parse(localStorage.getItem('user')))
+        this.data.setOrder([])
+        this.order = []
+
+    }
+
+    getOrdered(username) {
+        let sumOrdered = 0
+        this.rs.getOrder(username).subscribe(res=> {
+            this.ordered = res;
+            for (var i = 0; i < this.ordered.length; i++) {
+                this.ordered[i].image = host + this.ordered[i].image
+                sumOrdered += this.ordered[i].price * this.ordered[i].quantity
+            }
+            this.totalSumOrdered = sumOrdered
+        })
+        
     }
 
     ngOnInit() {
@@ -87,7 +106,7 @@ export class OrderComponent implements OnInit {
         } else {
             this.loginDisplay = false;
         }
-
+        this.getOrdered(JSON.parse(localStorage.getItem('user')))
     };
 
     login(username: string, password: string) {
