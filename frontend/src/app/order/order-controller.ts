@@ -25,7 +25,12 @@ export class OrderComponent implements OnInit {
     }
 
     getCurrentOrder () {
+        let totalSum = 0
         this.order = this.data.getCurrentOrder()
+        this.order.forEach(function(elem, index) {
+            totalSum += elem['price'] * elem['quantity']
+        })
+        this.totalSum = totalSum
     }
 
     updateCurrentOrder(elemOrder, isDelete) {
@@ -47,8 +52,18 @@ export class OrderComponent implements OnInit {
         
     }
 
-    changeQuantity(event) {
-        console.log(event.target.value, '909809809809')
+    changeQuantity(event, productId) {
+        let indexOrder = 0
+        let totalSum = 0
+        this.order.forEach(function(elem, index) {
+            if (elem["id"] == productId) {
+                indexOrder = index
+                elem['quantity'] = event.target.value
+            } 
+            totalSum += elem['price'] * elem['quantity']
+        })
+        this.totalSum = totalSum
+        this.data.setOrder(this.order)
     }
 
     ngOnInit() {
@@ -59,6 +74,7 @@ export class OrderComponent implements OnInit {
         } else {
             this.loginDisplay = false;
         }
+
     };
 
     login(username: string, password: string) {

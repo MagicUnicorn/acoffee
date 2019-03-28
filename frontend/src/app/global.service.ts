@@ -26,4 +26,8 @@ export class DataService {
 
   }
 
+  setOrder(order) {
+    localStorage.setItem('order', JSON.stringify(order));
+  }
+
 }
