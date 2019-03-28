@@ -18,6 +18,7 @@ export class OrderComponent implements OnInit {
     totalSum = 0
 
     constructor(
+        private rs: RequestService,
         private authServ: AuthenticationService,
         private data: DataService
     ) {
@@ -64,6 +65,18 @@ export class OrderComponent implements OnInit {
         })
         this.totalSum = totalSum
         this.data.setOrder(this.order)
+    }
+
+    createOrder() {
+        let order = {}
+        order["order"] = {}
+        order["order"]["user"] = JSON.parse(localStorage.getItem('user'));
+        order["product"] = []
+        for (var i = 0; i < this.order.length; i++) {
+            order["product"].push({"id":this.order[i].id, "quantity": this.order[i].quantity})
+        }
+        console.log(order)
+        this.rs.setOrder(order)
     }
 
     ngOnInit() {

@@ -90,16 +90,13 @@
           <hr>
           <p class="d-flex total-price">
             <span>Всего</span>
-            <span>8 BYN</span>
+            <span>{{totalSum | number:'1.0-2'}} BYN</span>
           </p>
         </div>
-        <p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Оформить заказ</a></p>
+        <p class="text-center"><a (click)="createOrder()" class="btn btn-primary py-3 px-4">Оформить заказ</a></p>
       </div>
     </div>
   </div>
-</section>
-
-<section class="ftco-menu mb-5 pb-5" style="padding-top: 0px; padding-bottom: 0px;">
   <div class="container">
     <div class="row justify-content-center mb-5">
       <div class="col-md-7 heading-section text-center">
