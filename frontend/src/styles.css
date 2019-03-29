@@ -1,3 +1,16 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -9282,3 +9295,78 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+
+    @font-face {
+      font-family: 'icomoon';
+      src:  url('./styles/fonts/icomoon/icomoon.eot?6tt51o');
+      src:  url('./styles/fonts/icomoon/icomoon.eot?6tt51o#iefix') format('embedded-opentype'),
+        url('./styles/fonts/icomoon/icomoon.ttf?6tt51o') format('truetype'),
+        url('./styles/fonts/icomoon/icomoon.woff?6tt51o') format('woff'),
+        url('./styles/fonts/icomoon/icomoon.svg?6tt51o#icomoon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    [class^="icon-"], [class*=" icon-"] {
+      /* use !important to prevent issues with browser extensions that change fonts */
+      font-family: 'icomoon' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+    
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .icon-twitter:before {
+      content: "\f099";
+    }
+
+    .icon-facebook:before {
+      content: "\f09a";
+    }
+
+    .icon-instagram:before {
+      content: "\f16d";
+    }
+
+    	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 27/09/2018 06:27
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./styles/fonts/flaticon/font/Flaticon.eot");
+  src: url("./styles/fonts/flaticon/font/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./styles/fonts/flaticon/font/Flaticon.woff") format("woff"),
+       url("./styles/fonts/flaticon/font/Flaticon.ttf") format("truetype"),
+       url("./styles/fonts/flaticon/font/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./styles/fonts/flaticon/font/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 40px;
+font-style: normal;
+margin-left: 0px;
+}
+
+.flaticon-coffee-cup:before { content: "\f100"; }
+.flaticon-choices:before { content: "\f101"; }
+.flaticon-coffee-bean:before { content: "\f102"; }
+.flaticon-delivery-truck:before { content: "\f103"; }

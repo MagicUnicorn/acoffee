@@ -8,6 +8,7 @@ import { OrderComponent } from './order/order-controller';
 import { ShopComponent } from './shop/shop-controller';
 import { UserComponent } from './user/user-controller';
 import { ContactComponent } from './contact/contact-controller'
+import { MainComponent } from './main/main-controller'
 
 const routes: Routes = [
   // {path: '', component: AppComponent, pathMatch: 'full'},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'order', component: OrderComponent},
   {path: 'shop', component: ShopComponent},
   {path: 'user', component: UserComponent},
-  {path: 'contact', component: ContactComponent}
+  {path: 'contact', component: ContactComponent},
+  {path: 'main', component: MainComponent}
 ];
 
 @NgModule({
