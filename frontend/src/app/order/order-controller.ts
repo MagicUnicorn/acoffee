@@ -82,6 +82,7 @@ export class OrderComponent implements OnInit {
         this.getOrdered(JSON.parse(localStorage.getItem('user')))
         this.data.setOrder([])
         this.order = []
+        window.location.reload();
 
     }
 

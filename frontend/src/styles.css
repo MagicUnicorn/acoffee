@@ -1,23 +1,11 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -8489,8 +8477,7 @@ textarea.form-control {
 
 .ftco-animate {
   opacity: 0;
-  visibility: hidden; 
-}
+  visibility: hidden; }
 
 .bg-primary {
   background: #c49b63 !important; }
@@ -9296,7 +9283,7 @@ textarea.form-control {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
 
-
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++==*/
     @font-face {
       font-family: 'icomoon';
       src:  url('./styles/fonts/icomoon/icomoon.eot?6tt51o');
