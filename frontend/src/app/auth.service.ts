@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Headers, RequestOptions, Response } from '@angular/http';
+import { Headers, RequestOptions} from '@angular/http';
 import { Router } from "@angular/router"
 import { host } from './main';
 

@@ -1,17 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ServiceComponent } from './service-controller';
-import { CommonModule } from '@angular/common';
+import { MainComponent } from './main-controller';
+
 
 @NgModule({
   declarations: [
-    ServiceComponent
+    MainComponent
   ],
   imports: [
     BrowserModule,
   ],
   providers: [
-    CommonModule
   ],
 })
-export class ServiceModule { }
+export class ContactModule {
+  
+}

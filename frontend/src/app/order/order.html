@@ -6,13 +6,50 @@
 
         <div class="col-md-7 col-sm-12 text-center ">
           <h1 class="mb-3 mt-5 bread">Меню</h1>
-          <p class="breadcrumbs"><span class="mr-2"><a href="/">Главная</a></span> <span>Заказ</span></p>
+          <p class="breadcrumbs"><span class="mr-2"><a routerLink="/main">Главная</a></span> <span>Заказ</span></p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+
+    <div class="card mt-5" style="margin:auto;width: 600px;" *ngIf="!loginDisplay">
+          <div class="card-body" style="color:#000">
+                         <fieldset>
+                  <div class="row">
+                      <div class="col-md-12" style="padding-bottom: 5px;">
+                          <div id="legend">
+                              <legend class="">Вход</legend>
+                          </div>
+                      </div>
+                  </div>
+                   <div class="row">
+                      <div class="col-md-12" style="padding-bottom: 15px;">
+                          <input type="text" id="username" name="username" placeholder="Логин" [(ngModel)]="username" class="input-xlarge" style="width: 100%">
+                      </div>    
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12" style="padding-bottom: 15px;">
+                          <input type="password" id="password" name="password" placeholder="Пароль" [(ngModel)]="password" class="input-xlarge" style="width: 100%">
+                      </div>    
+                  </div>
+                  
+                  <div class="row">
+                       <div class="form-group">
+              <input type="submit" value="Войти" (click)="login(username, password)" class="btn btn-dark py-3 px-5" style="margin-left: 15px;">
+            </div>
+                  </div>    
+              </fieldset>
+</div>
+</div>
+
+
+
+
+
+
+<!-- 
 <div class="card mt-5" style="margin:auto;width: 600px;" *ngIf="!loginDisplay">
   <div class="card-body" style="color:#000">
     <h5 class="card-title">Login</h5>
@@ -26,16 +63,58 @@
     </div>
     <button type="submit" class="btn btn-primary" (click)="login(username, password)">Login</button>
   </div>
-</div>
+</div> -->
 
-<button type="submit" class="btn btn-primary" (click)="logout()">Logout</button>
+<!-- <button type="submit" class="btn btn-primary" (click)="logout()">Logout</button> -->
 
 <section class="ftco-section ftco-cart" *ngIf="loginDisplay" >
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="cart-list">
-          <table class="table">
+        <div class="cart-list" style="overflow-x:hidden;">
+
+            <table class="table"  *ngIf="ordered.length > 0">
+                <thead class="thead-primary">
+                  <tr class="text-center">
+                    <th>&nbsp;</th>
+                    <th>Товар</th>
+                    <th>Цена</th>
+                    <th>Количество</th>
+                    <th>Всего</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center" *ngFor="let product of ordered">
+                    <td class="image-prod"><div class="img" [ngStyle]="{ 'background-image': 'url(' + product.image + ')'}"></div></td>
+                    
+                    <td class="product-name">
+                      <h3>{{product.name}}</h3>
+                      <p>{{product.description}}</p>
+                    </td>
+                    
+                    <td class="price">{{product.price}} BYN</td>
+                    
+                    <td class="price">
+                        {{product.quantity}}
+                    </td>
+                    <td class="total">{{product.price * product.quantity | number:'1.0-2'}} BYN</td>
+                  </tr><!-- END TR-->
+                </tbody>
+              </table>
+              <div class="row justify-content-end"  *ngIf="ordered.length > 0">
+                  <div class="col col-lg-3 col-md-6 mt-5 cart-wrap">
+                    <div class="cart-total mb-3">
+                      <p class="d-flex total-price">
+                        <span>Всего</span>
+                        <span>{{totalSumOrdered | number:'1.0-2'}} BYN</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              <!-- </div> -->
+
+
+          <table class="table" *ngIf="order.length > 0">
             <thead class="thead-primary">
               <tr class="text-center">
                 <th>&nbsp;</th>
@@ -49,7 +128,7 @@
             <tbody>
               <tr class="text-center" *ngFor="let product of order">
                 <td class="product-remove"><a [routerLink]="" id="{{product.id}}" (click)="deleteProductOrder(product.id)"><span class="icon-close"></span></a></td>
-                <td class="image-prod"><div class="img" style="background-image:url(images/alexandra-kusper-217070-unsplash.jpg);"></div></td>
+                <td class="image-prod"><div class="img" [ngStyle]="{ 'background-image': 'url(' + product.image + ')'}"></div></td>
                 
                 <td class="product-name">
                   <h3>{{product.name}}</h3>
@@ -60,24 +139,24 @@
                 
                 <td class="quantity">
                   <div class="input-group mb-3">
-                     <input type="text" name="quantity" [(ngModel)]="quantity" class="quantity form-control input-number" value={{product.quantity}} min="1" max="100">
+                     <input type="text" name="quantity" id="product.id" (change)="changeQuantity($event, product.id)" [(ngModel)]="product.quantity" class="quantity form-control input-number" value={{product.quantity}} min="1" max="100">
                   </div>
                 </td>
                 
-                <td class="total">{{product.price * product.quantity}} BYN</td>
+                <td class="total">{{product.price * product.quantity | number:'1.0-2'}} BYN</td>
               </tr><!-- END TR-->
             </tbody>
           </table>
         </div>
       </div>
     </div>
-    <div class="row justify-content-end">
+    <div class="row justify-content-end" *ngIf="order.length > 0">
       <div class="col col-lg-3 col-md-6 mt-5 cart-wrap">
         <div class="cart-total mb-3">
           <h3>Предчек</h3>
           <p class="d-flex">
             <span>Товары</span>
-            <span>8 BYN</span>
+            <span>{{totalSum | number:'1.0-2'}} BYN</span>
           </p>
           <p class="d-flex">
             <span>Доставка</span>
@@ -90,22 +169,19 @@
           <hr>
           <p class="d-flex total-price">
             <span>Всего</span>
-            <span>8 BYN</span>
+            <span>{{totalSum | number:'1.0-2'}} BYN</span>
           </p>
         </div>
-        <p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Оформить заказ</a></p>
+        <p class="text-center"><a (click)="createOrder()" class="btn btn-primary py-3 px-4">Оформить заказ</a></p>
       </div>
     </div>
   </div>
-</section>
-
-<section class="ftco-menu mb-5 pb-5" style="padding-top: 0px; padding-bottom: 0px;">
   <div class="container">
     <div class="row justify-content-center mb-5">
       <div class="col-md-7 heading-section text-center">
         <span class="subheading">aCoffee</span>
         <h2 class="mb-4">Хотите скорректировать заказ?:) Нет проблем!</h2>
-        <p><a href="shop.html" class="btn btn-primary p-3 px-xl-4 py-xl-3">Изменить заказ</a> <a href="menu.html" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Смотреть меню</a></p>
+        <p><a routerLink="/shop" class="btn btn-primary p-3 px-xl-4 py-xl-3">Изменить заказ</a> <a routerLink="/menu" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Смотреть меню</a></p>
       </div>
     </div>
   </div>

@@ -22,10 +22,20 @@ export class ShopComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getCurrentOrder()
         this.rs.getProducts().toPromise().then(response => {
+            let order = []
             this.categorizationProductInfo(response);
             this.clearFilter();
+            order = this.getCurrentOrder()
+            this.menus["Все"].forEach(function(elem) {
+                for (var i = 0; i < order.length; i++) {
+                    if (order[i].id == elem.id) {
+                        elem.ordered = true;
+                        elem.quantity = order[i].quantity
+                    }
+                }
+            })
+            this.order = order
         })
 
     };
@@ -35,7 +45,7 @@ export class ShopComponent implements OnInit {
     }
 
     getCurrentOrder () {
-        this.order = this.data.getCurrentOrder()
+        return this.data.getCurrentOrder()
     }
 
     updateCurrentOrder(elemOrder, isDelete) {

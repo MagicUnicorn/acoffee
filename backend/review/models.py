@@ -9,7 +9,7 @@ class Review(models.Model):
 	# Модель для отзывов
 	title = models.CharField(max_length=126)
 	body = models.TextField(max_length=10000)
-	user = models.ForeignKey(User, related_name='review_user', on_delete='Cascade')
+	user = models.ForeignKey(User, related_name='review_user', on_delete='Cascade', null=True)
 	timestamp_create = models.DateTimeField(default=timezone.now)
 	is_deleted = models.BooleanField(default=False)
 

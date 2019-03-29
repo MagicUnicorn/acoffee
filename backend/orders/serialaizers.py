@@ -1,8 +1,12 @@
 from rest_framework import serializers
 from django.db import transaction
+from rest_framework.response import Response
 
 from products.serialaizers import ProductSerializer
 from .models import Order, OrderProduct
+from django.contrib.auth import get_user_model
+
+UserModel = get_user_model()
 
 
 class ProductsSerializer(serializers.Serializer):
@@ -13,7 +17,16 @@ class ProductsSerializer(serializers.Serializer):
         fields = ('id', 'quantity',)
 
 
+class OrderDisplaySerializer(serializers.ModelSerializer):
+    user = serializers.CharField()
+
+    class Meta:
+        model = Order
+        fields = '__all__'
+
+
 class OrderSerializer(serializers.ModelSerializer):
+    user = serializers.CharField()
 
     class Meta:
         model = Order
@@ -27,15 +40,14 @@ class OrderProductSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = validated_data['order']['user']
         with transaction.atomic():
-            order = Order.objects.create(user=user)
-            for i in validated_data['product']:
-                print(i)
-            order_products = OrderProduct.objects.bulk_create(
+            user_obj = UserModel.objects.filter(username=user)[0]
+            order = Order.objects.create(user=user_obj)
+            OrderProduct.objects.bulk_create(
                 OrderProduct(
                     order_id=order.id, product_id=i['id'], quantity=i['quantity']
                 ) for i in validated_data['product']
             )
-        return order_products
+        return validated_data
 
     class Meta:
         model = OrderProduct
@@ -43,7 +55,7 @@ class OrderProductSerializer(serializers.ModelSerializer):
 
 
 class OrderProductDisplaySerializer(serializers.ModelSerializer):
-    order = OrderSerializer()
+    order = OrderDisplaySerializer()
     product = ProductSerializer()
 
     class Meta:

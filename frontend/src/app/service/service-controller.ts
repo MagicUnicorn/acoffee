@@ -18,7 +18,6 @@ export class ServiceComponent implements OnInit {
     }
 
     ngOnInit() {
-        
         this.rs.getReview().toPromise().then(response => {
             this.updateReviewInfo(response)
         })
@@ -28,8 +27,14 @@ export class ServiceComponent implements OnInit {
         data.forEach(function(elem) {
             elem["timestamp_create"] = new Date(elem["timestamp_create"]);
         })
-        console.log(data)
         this.reviews = data
+    }
+
+    create_review(username, title, review) {
+        this.rs.setReview(username, title, review).subscribe(res=> {
+            this.reviews = res
+        })
+        window.location.reload();
     }
 }
 

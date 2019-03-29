@@ -16,7 +16,8 @@ import { OrderService } from './order/order-service';
 import { ShopComponent } from './shop/shop-controller';
 import { UserComponent } from './user/user-controller';
 import { AuthenticationService } from './auth.service';
-import { ContactComponent } from './contact/contact-controller'
+import { ContactComponent } from './contact/contact-controller';
+import { MainComponent } from './main/main-controller';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ContactComponent } from './contact/contact-controller'
     OrderComponent,
     ShopComponent,
     UserComponent,
-    ContactComponent
+    ContactComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
