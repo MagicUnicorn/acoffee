@@ -8510,7 +8510,7 @@ textarea.form-control {
 .ftco-footer {
   font-size: 16px;
   padding: 7em 0;
-  background: #120f0f; }
+  background: #000000; }
   .ftco-footer .ftco-footer-logo {
     text-transform: uppercase;
     letter-spacing: .1em; }
@@ -9310,8 +9310,18 @@ textarea.form-control {
       -moz-osx-font-smoothing: grayscale;
     }
 
+    /* .icon-twitter:after {
+      content: "\f099";
+      color: red;
+    } */
+
     .icon-twitter:before {
       content: "\f099";
+    }
+
+    .icon-twitter:hover {
+       color: red;
+       content: "\f099";
     }
 
     .icon-facebook:before {
@@ -9320,6 +9330,14 @@ textarea.form-control {
 
     .icon-instagram:before {
       content: "\f16d";
+    }
+
+    .icon-signing:before {
+      content: "\f2a7";
+    }
+
+    .icon-sign-in:before {
+      content: "\f090";
     }
 
     	/*
