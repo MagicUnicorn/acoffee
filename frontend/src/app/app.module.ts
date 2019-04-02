@@ -38,7 +38,6 @@ import { MainComponent } from './main/main-controller';
     HttpClientModule,
     AppRoutingModule,
     NgbModule.forRoot(),
- 
     FormsModule
   ],
   providers: [
