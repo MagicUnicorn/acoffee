@@ -9008,7 +9008,7 @@ textarea.form-control {
 
 .contact-form .form-control {
   border: transparent !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid #c49b63 !important;
   height: 58px !important;
   padding-left: 0;
   padding-right: 0;
