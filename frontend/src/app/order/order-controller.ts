@@ -113,7 +113,7 @@ export class OrderComponent implements OnInit {
     login(username: string, password: string) {
         this.authServ.login(username, password);
         this.loginDisplay = true;
-        window.location.reload();
+        // window.location.reload();
 
     }
 

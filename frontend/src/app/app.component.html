@@ -6,15 +6,15 @@
     </button>
     <div class="collapse navbar-collapse" [ngbCollapse]="!toggleNavbar">
       <ul class="navbar-nav ml-auto">
-        <li routerLinkActive="active" class="nav-item"><a class="nav-link" routerLink="/main">Главная</a></li>
-        <li routerLinkActive="active" class="nav-item"><a class="nav-link" routerLink="/about">О нас</a></li>
-        <li routerLinkActive="active" class="nav-item"><a class="nav-link" routerLink="/menu">Меню</a></li>
-        <li routerLinkActive="active" class="nav-item"><a class="nav-link" routerLink="/service">Отзывы</a></li>
-        <li routerLinkActive="active" class="nav-item"><a class="nav-link" routerLink="/blog">Акции</a></li>
-        <li routerLinkActive="active" class="nav-item"><a class="nav-link" routerLink="/shop">Предзаказ</a></li>
-        <li routerLinkActive="active" class="nav-item"><a class="nav-link" routerLink="/contact">Контакты</a></li>
-        <li routerLinkActive="active" class="nav-item cart"><a class="nav-link" routerLink="/user"><span class="icon icon-sign-in"></span></a></li>
-        <li routerLinkActive="active" class="nav-item cart"><a class="nav-link" href="/order"><span class="icon icon-shopping_cart"></span></a></li>
+        <li routerLinkActive="active" (click)="toggleNavbar = !toggleNavbar" class="nav-item"><a class="nav-link" routerLink="/main">Главная</a></li>
+        <li routerLinkActive="active" (click)="toggleNavbar = !toggleNavbar" class="nav-item"><a class="nav-link" routerLink="/about">О нас</a></li>
+        <li routerLinkActive="active" (click)="toggleNavbar = !toggleNavbar" class="nav-item"><a class="nav-link" routerLink="/menu">Меню</a></li>
+        <li routerLinkActive="active" (click)="toggleNavbar = !toggleNavbar" class="nav-item"><a class="nav-link" routerLink="/service">Отзывы</a></li>
+        <li routerLinkActive="active" (click)="toggleNavbar = !toggleNavbar" class="nav-item"><a class="nav-link" routerLink="/blog">Акции</a></li>
+        <li routerLinkActive="active" (click)="toggleNavbar = !toggleNavbar" class="nav-item"><a class="nav-link" routerLink="/shop">Предзаказ</a></li>
+        <li routerLinkActive="active" (click)="toggleNavbar = !toggleNavbar" class="nav-item"><a class="nav-link" routerLink="/contact">Контакты</a></li>
+        <li routerLinkActive="active" (click)="toggleNavbar = !toggleNavbar" class="nav-item cart"><a class="nav-link" routerLink="/user"><span class="icon icon-sign-in"></span></a></li>
+        <li routerLinkActive="active" (click)="toggleNavbar = !toggleNavbar" class="nav-item cart"><a class="nav-link" href="/order"><span class="icon icon-shopping_cart"></span></a></li>
       </ul>
     </div>
   </div>
