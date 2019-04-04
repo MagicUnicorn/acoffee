@@ -12,7 +12,7 @@ import { MainComponent } from './main/main-controller'
 
 const routes: Routes = [
   // {path: '', component: AppComponent, pathMatch: 'full'},
-  {path: '', component: AboutComponent},
+  {path: '', component: MainComponent},
   {path: 'about', component: AboutComponent},
   {path: 'menu', component: MenuComponent},
   {path: 'service', component: ServiceComponent},
