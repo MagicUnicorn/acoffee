@@ -19,11 +19,13 @@ export class ContactComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('////////////////')
         this.rs.getContact().toPromise().then(response => {
             this.contacts = response
-            console.log(this.contacts, "=======")
         })
     };
+
+    sendLetter(first_name, last_name, email, message) {
+        this.rs.setMessage(first_name, last_name, email, message)
+    }
 }
 

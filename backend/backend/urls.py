@@ -20,7 +20,7 @@ from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
 from products.views import ProductViewSet, CategoryViewSet
 from about.views import AboutViewSet
-from contact.views import ContactViewSet
+from contact.views import ContactViewSet, LetterViewSet
 from news.views import NewsViewSet
 from orders.views import OrderProductViewSet
 from review.views import ReviewViewSet
@@ -36,7 +36,7 @@ router.register(r'news', NewsViewSet)
 router.register(r'order_product', OrderProductViewSet)
 router.register(r'review', ReviewViewSet)
 router.register(r'create_user', CreateUserView)
-
+router.register(r'letter', LetterViewSet, 'letter')
 
 
 # Wire up our API using automatic URL routing.
