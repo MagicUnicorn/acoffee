@@ -19,4 +19,4 @@ class OrderProduct(models.Model):
 	quantity = models.IntegerField(default=1)
 
 	def __str__(self):
-		return self.id.__str__()
+		return '{}_{}_{}_{}'.format(str(self.order.id), str(self.id.__str__()), self.product, self.quantity)

@@ -62,6 +62,20 @@ export class RequestService {
         return this.http2.post(host + '/review/', data, {headers: headers})
     }
 
+    setMessage(first_name, last_name, email, message) {
+        let data = {first_name:first_name, last_name:last_name, email:email, message:message}
+        const token = JSON.parse(localStorage.getItem('token'))
+        let headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+
+        });
+        this.http2.post(host + '/letter/', data, {headers: headers})
+            .toPromise().then(response => {
+                console.log(response)
+            })
+    }
+
     getOrder(username): Observable<any> {
         const token = JSON.parse(localStorage.getItem('token'))
         let headers = new HttpHeaders({
