@@ -52,7 +52,8 @@ export class OrderComponent implements OnInit {
         if (index > -1) {
             this.order.splice(index, 1);
         }
-        this.updateCurrentOrder(elem, true)
+        this.updateCurrentOrder(elem, true);
+        this.getCurrentOrder();
         
     }
 
