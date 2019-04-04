@@ -14,7 +14,7 @@
 </section>
 
 
-    <div class="card mt-5" style="margin:auto;width: 600px;" *ngIf="!loginDisplay">
+    <!-- <div class="card mt-5" style="margin:auto;width: 600px;" *ngIf="!loginDisplay">
           <div class="card-body" style="color:#000">
                          <fieldset>
                   <div class="row">
@@ -42,6 +42,23 @@
                   </div>    
               </fieldset>
 </div>
+</div> -->
+<div class="row" *ngIf="!loginDisplay">
+  <div class="col-md-4 col-sm-1"></div>
+    <div class="col-md-4 col-sm-10" >
+      <form action="#" class="contact-form">
+        <div class="form-group" >
+          <input style="padding-left: 10px" type="text" class="form-control" name="username" placeholder="Логин" [(ngModel)]="username">
+        </div>
+        <div class="form-group">
+          <input style="padding-left: 10px" type="password" class="form-control" name="password" placeholder="Пароль" [(ngModel)]="password">
+        </div>
+        <div class="form-group" style="text-align: center">
+          <input type="submit" value="Отправить" (click)="login(username, password)" class="btn btn-primary py-3 px-5">
+        </div>
+      </form>
+    </div>
+  <div class="col-md-4 col-sm-1"></div>
 </div>
 
 
@@ -50,7 +67,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="cart-list">
+        <div class="cart-list"  style="overflow-x: auto">
 
             <!-- <table class="table"  *ngIf="ordered.length > 0">
                 <thead class="thead-primary">
