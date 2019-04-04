@@ -46,32 +46,11 @@
 
 
 
-
-
-
-<!-- 
-<div class="card mt-5" style="margin:auto;width: 600px;" *ngIf="!loginDisplay">
-  <div class="card-body" style="color:#000">
-    <h5 class="card-title">Login</h5>
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input style="color:#000" type="text" id="username" placeholder="Username" [(ngModel)]="username">
-    </div>
-    <div class="form-group">
-      <label for="username">Password</label>
-      <input style="color: #000;" type="password" id="password" placeholder="Password" [(ngModel)]="password">
-    </div>
-    <button type="submit" class="btn btn-primary" (click)="login(username, password)">Login</button>
-  </div>
-</div> -->
-
-<!-- <button type="submit" class="btn btn-primary" (click)="logout()">Logout</button> -->
-
 <section class="ftco-section ftco-cart" *ngIf="loginDisplay" >
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="cart-list" style="overflow-x:hidden;">
+        <div class="cart-list">
 
             <!-- <table class="table"  *ngIf="ordered.length > 0">
                 <thead class="thead-primary">
