@@ -44,7 +44,7 @@
                       <a [routerLink]="" class="menu-img img mb-4" [ngStyle]="{ 'background-image': 'url(' + product.image + ')'}"></a>
                       <div class="text">
                         <h3><a [routerLink]="">{{product.name}}</a></h3>
-                        <p>{{product.description}}</p>
+                        <p style="height: 40px">{{product.description}}</p>
                         <p class="price"><span>{{product.price}} BYN</span></p>
                         <p *ngIf="!product.ordered"><a [routerLink]="" id="{{product.id}}" class="btn btn-primary btn-outline-primary" (click)="addToOrder(product.id)">Заказать</a></p>
                         <p *ngIf="product.ordered"><a [routerLink]="" id="{{product.id}}" class="btn btn-primary btn-outline-primary" (click)="deleteFromOrder(product.id)">Отменить</a></p>
