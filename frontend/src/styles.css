@@ -9382,6 +9382,10 @@ textarea.form-control {
       content: "\f090";
     }
 
+    .icon-close:before {
+      content: "\f00d";
+    }
+
     	/*
   	Flaticon icon font: Flaticon
   	Creation date: 27/09/2018 06:27
