@@ -1,12 +1,8 @@
 __pycache__/
 node_modules/
 e2e
-db.sqlite3
 *.pyc
 acofeeenv/
 .idea/
-files/
-media/
-static/
 settings_local.py
 safety.py
